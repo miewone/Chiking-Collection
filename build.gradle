@@ -26,6 +26,7 @@ ext {
 }
 
 dependencies {
+	implementation 'com.cronutils:cron-utils:9.2.0'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -38,6 +39,7 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'commons-validator', name: 'commons-validator', version: '1.7'
 }
 
 dependencyManagement {
