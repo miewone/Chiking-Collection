@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.miewone.collectionservice.utils.DateTimeUtils.dateTimeOf;
+import static java.util.Optional.ofNullable;
 
 /**
  * Created by wgPark on 2023-08-06.
@@ -24,17 +25,21 @@ public class JdbcPostingRepository implements PostingRepository{
     @Override
     public Optional<Posting> findById(long id) {
         List<Posting> results = jdbcTemplate.query(
-                "SELECT * FROM POSTINGS WHERE SEQ=?",
+                "SELECT * FROM postings WHERE SEQ=?",
                 mapper,
                 id
         );
 
-        return Optional.empty();
+        return ofNullable(results.isEmpty() ? null : results.get(0));
+
     }
 
     @Override
     public List<Posting> findAll() {
-        return null;
+        return jdbcTemplate.query(
+                "SELECT * FROM postings",
+                mapper
+        );
     }
 
     static RowMapper<Posting> mapper = (rs, rowNum) ->

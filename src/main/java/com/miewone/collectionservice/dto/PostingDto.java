@@ -33,6 +33,6 @@ public class PostingDto {
     public PostingDto(Posting source) {
         copyProperties(source, this);
 
-        this.description = source.getDescription().orElse(null);
+        this.description = source.getDescription(description).orElse(null);
     }
 }
