@@ -5,9 +5,9 @@ spring:
   application:
     name: collection-service
   datasource:
-    url: ${datasource.url}?characterEncoding=utf8
-    username: ${datasource.username}
-    password: ${datasource.password}
+    url: jdbc:mysql://localhost:3306/collection?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: wongyun
+    password: tkfkdgo156
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 eureka:
