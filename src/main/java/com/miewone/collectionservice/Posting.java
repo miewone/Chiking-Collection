@@ -14,9 +14,10 @@ import java.time.LocalDateTime;
 @Data
 @ToString
 @EqualsAndHashCode
+@Builder
 public class Posting {
 
-    private final Long seq;
+    private Long seq;
 
     private String name;
 
@@ -29,17 +30,4 @@ public class Posting {
     private LocalDateTime createAt;
 
 
-    @lombok.Builder
-    @Data
-    static public class PostingBuilder {
-        private Long seq;
-        private String name;
-        private String description;
-        private int reviewCount;
-        private LocalDateTime createAt;
-
-        public PostingBuilder() {/*empty*/}
-
-
-    }
 }

@@ -38,11 +38,12 @@ public class JdbcPostingRepository implements PostingRepository{
     }
 
     static RowMapper<Posting> mapper = (rs, rowNum) ->
-            new Posting.builder()
+            Posting.builder()
                     .seq(rs.getLong("seq"))
                     .name(rs.getString("name"))
-                    .details(rs.getString("details"))
-                    .reviewCount(rs.getInt("review_count"))
-                    .createAt(dateTimeOf(rs.getTimestamp("create_at")))
+                    .description(rs.getString("description"))
+                    .url(rs.getString("url"))
+                    .schedule(rs.getString("schedule"))
+                    .createAt(dateTimeOf(rs.getTimestamp("createAt")))
                     .build();
 }

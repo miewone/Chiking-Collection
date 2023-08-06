@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: collection-service
+  datasource:
+    url: ${datasource.url}?characterEncoding=utf8
+    username: ${datasource.username}
+    password: ${datasource.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 eureka:
   client:
