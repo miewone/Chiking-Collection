@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8090
 
 spring:
   application:
@@ -9,6 +9,11 @@ spring:
     username: wongyun
     password: tkfkdgo156
     driver-class-name: com.mysql.cj.jdbc.Driver
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9020
 
 eureka:
   client:

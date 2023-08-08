@@ -28,7 +28,8 @@ ext {
 dependencies {
 	implementation 'com.cronutils:cron-utils:9.2.0'
 	runtimeOnly 'com.mysql:mysql-connector-j'
-
+	implementation 'org.springframework.boot:spring-boot-starter-security:2.5.4'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server:2.5.4'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.apache.commons:commons-lang3:3.12.0'
